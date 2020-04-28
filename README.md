@@ -137,16 +137,15 @@ MyActionListener myActionListener;
 
 2.选课流程
 将选课输出内容写入“选课.txt”文件，输入每名学生信息后换行，并设计异常。
-	```java
-	try {
-    	    	out=new FileWriter(f1,true);
-    	    	out.write("  "+student.getName()+"  "+student.getSubject()+"\n");
-    	    	out.flush();
-    	    	out.close();
-			} catch (IOException e) {
-				System.out.println("文件传输错误");
-			}
-	```
+
+```java
+try {out=new FileWriter(f1,true);
+out.write("  "+student.getName()+"  "+student.getSubject()+"\n");
+out.flush();
+out.close();
+} catch (IOException e) {System.out.println("文件传输错误");
+}
+```
 3.退课流程
 读取文件每一行数据逐次放入缓存，缓存中的一行数据与姓名、课程对比，相同则该行数据不写入文件，不同则写入文件，直到缓存读取到文件数据为空停止，并设计异常。
 ```java
