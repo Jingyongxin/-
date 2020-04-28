@@ -178,21 +178,21 @@ public void actionPerformed(ActionEvent arg0) {
 
 ## 选课操作
 
-![images]（）
+![images](https://github.com/Jingyongxin/-/blob/master/选课.png)
 
 选课后“选课.txt”内保存的数据
 
-呀！没加载出来
+![images](https://github.com/Jingyongxin/-/blob/master/选课储存.png)
 
 退课操作
 
-呀！没加载出来
+![images](https://github.com/Jingyongxin/-/blob/master/退课.png)
 
 退课后“选课.txt”内保存的数据
 
-呀！没加载出来
+![images](https://github.com/Jingyongxin/-/blob/master/退储存.png)
 
-实验感悟
+# 实验感悟
 
 通过本学期的多次实验，让我掌握了Java基本语法，学会了图像界面的设计，掌握了字符串String及其方法的使用和添加异常处理。
 基本上实现了学生选课系统的设计，虽然有些简陋和不完善，但也是这一学期学习的成果和展现，让我深刻明白在书本上学再多不如动手做一做。
