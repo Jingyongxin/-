@@ -174,11 +174,11 @@ public void actionPerformed(ActionEvent arg0) {
 # 流程图
 ![images](https://github.com/Jingyongxin/-/blob/master/流程图.png)
 
-## 实验结果
+# 实验结果
 
 ## 选课操作
 
-呀！没加载出来
+![images]（）
 
 选课后“选课.txt”内保存的数据
 
