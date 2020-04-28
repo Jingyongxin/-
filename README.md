@@ -109,10 +109,11 @@ class MyActionListener implements ActionListener{//定义监听器类
 	
 }
 MyActionListener myActionListener;
-
+```
 ## 基于文件保存并读取数据（以选、退课为例）
 
 1.声明文件流相关属性和字符缓存器
+```java
         File f1= new File("C:\\Users\\lenovo\\Desktop"+File.separator+"选课.txt"); //文件路径及名称
 	FileWriter out;//字符数据的写入
 	BufferedReader br;//字符的读取
@@ -120,8 +121,10 @@ MyActionListener myActionListener;
 	
 	String abc;
 	StringBuffer def ;//缓存器
+	```
 2.选课流程
 将选课输出内容写入“选课.txt”文件，输入每名学生信息后换行，并设计异常。
+	```java
 	try {
     	    	out=new FileWriter(f1,true);
     	    	out.write("  "+student.getName()+"  "+student.getSubject()+"\n");
@@ -130,8 +133,10 @@ MyActionListener myActionListener;
 			} catch (IOException e) {
 				System.out.println("文件传输错误");
 			}
+			```
 3.退课流程
 读取文件每一行数据逐次放入缓存，缓存中的一行数据与姓名、课程对比，相同则该行数据不写入文件，不同则写入文件，直到缓存读取到文件数据为空停止，并设计异常。
+```java
 public void actionPerformed(ActionEvent arg0) {
 	try {
 		String bname=j6.getText();
@@ -153,6 +158,7 @@ public void actionPerformed(ActionEvent arg0) {
 		System.out.println("传输错误！");
 		}
 }
+```
 #流程图
 
 呀！没加载出来
