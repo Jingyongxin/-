@@ -72,20 +72,21 @@ public void putsubject(){
 
 1.界面设计
 采用“GridBagLayoutDemo”进行二次开发，设置j2、j3为“选课、退课（开课、关课）”按钮，设置j5下拉列表为课程名称，设置j6文本框获取学生、老师姓名，，设置j9文本框为课程信息输出。（下以教师管理为例）
-	```java
-	d = new MyFrame();
-        j2 = new JButton("开课");
-        j3 = new JButton("关课");
-        j4 = new JPanel();
-        String[] str1 = { "大学语文", "高等数学", "大学英语" };
-        String[] str2 = { "信息工程学院", "机械工程学院", "经济管理学院" };
-        j5 = new JComboBox(str1);
-        j10 = new JLabel("姓名：");
-        j6 = new JTextField();
-        j7 = new JButton("清除");
-        j8 = new JList(str2);
-        j9 = new TextField();
-	```
+
+```java
+d = new MyFrame();
+j2 = new JButton("开课");
+j3 = new JButton("关课");
+j4 = new JPanel();
+String[] str1 = { "大学语文", "高等数学", "大学英语" };
+String[] str2 = { "信息工程学院", "机械工程学院", "经济管理学院" };
+j5 = new JComboBox(str1);
+j10 = new JLabel("姓名：");
+j6 = new JTextField();
+j7 = new JButton("清除");
+j8 = new JList(str2);
+j9 = new TextField();
+```
 	
 2.事件驱动
 定义j2（开课）按钮为事件源，j2注册监听器对象actionPerformed，actionPerformed实现ActionEvent event响应操作为j9输出开课信息， ActionEvent event中教师名获取j6文本框输入的文本，课程名获取j5下拉文本。
