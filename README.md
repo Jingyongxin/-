@@ -1,34 +1,34 @@
  计G191 2019322176 静永鑫
-# 综合性实验 学生选课系统设计
+## 综合性实验 学生选课系统设计
 
-# 实验目的
+## 实验目的
 分析学生选课系统
 使用GUI窗体及其组件设计窗体界面
 完成学生选课过程业务逻辑编程
 基于文件保存并读取数据
 处理异常
 
-# 实验内容与要求
+## 实验内容与要求
 
 系统角色分析及类设计
 
 学校有“人员”，分为“教师”和“学生”，教师教授“课程”，学生选择“课程”。从简化系统考虑，每名教师仅教授一门课程，每门课程的授课教师也仅有一位，每名学生选仅选一门课程。
-# 具体实验要求
+## 具体实验要求
 
 1.设计GUI窗体，支持学生注册、课程新加、学生选课、学生退课、打印学生选课列表等操作。
 2.基于事件模型对业务逻辑编程，实现在界面上支持上述操作。
 3.针对操作过程中可能会出现的各种异常，做异常处理。
 4.基于输入/输出编程，支持学生、课程、教师等数据的读写操作。
 5.基于Github.com提交实验，包括实验SRC源文件夹程序、README.MD实验报告文档。
-# 实验过程
+ ## 实验过程
 
-# 角色分析与类设计
+## 角色分析与类设计
 
 1.设计Personnel类（人员类）
 声明编号、姓名、性别变量。
 2.设计Teacher类（教师类）
 继承Personnel类，获得编号、姓名、性别变量，调用Subject类， 使用toString() 方法将“"老师编号："+id+",老师："+name+",性别："+sex ”转为字符串返回结果。
-
+```java
 public class Teacher extends Personnel {
 	Subject subject;
 	public String toString(){
@@ -40,6 +40,7 @@ public class Teacher extends Personnel {
 }
 3.设计Student类（学生类）
 继承Personnel类，获得编号、姓名、性别变量，调用Subject类，进行选课、退课操作，使用toString() 方法将“"学生编号："+id+",学生："+name+",所选课程："+subject;”转为字符串返回结果。
+```java
 public void putsubject(){
 		if(subject==null){
 			System.out.println("您未选课！");
@@ -64,6 +65,7 @@ public void putsubject(){
 
 1.界面设计
 采用“GridBagLayoutDemo”进行二次开发，设置j2、j3为“选课、退课（开课、关课）”按钮，设置j5下拉列表为课程名称，设置j6文本框获取学生、老师姓名，，设置j9文本框为课程信息输出。（下以教师管理为例）
+	```java
 	d = new MyFrame();
         j2 = new JButton("开课");
         j3 = new JButton("关课");
@@ -78,6 +80,7 @@ public void putsubject(){
         j9 = new TextField();
 2.事件驱动
 定义j2（开课）按钮为事件源，j2注册监听器对象actionPerformed，actionPerformed实现ActionEvent event响应操作为j9输出开课信息， ActionEvent event中教师名获取j6文本框输入的文本，课程名获取j5下拉文本。
+```java
 j2.addActionListener(this);//注册监听器
 public void actionPerformed(ActionEvent event) {//指定监听器实现方法
 		String name = j6.getText();//获取j6文本框输入的文本赋给 name教师名
@@ -91,6 +94,7 @@ public void actionPerformed(ActionEvent event) {//指定监听器实现方法
     
 }
 定义j3（退课）按钮为事件源，j3注册监听器对象MyActionListener，定义MyActionListener实现ActionListener接口响应操作为j9输出关课文本。
+```java
 myActionListener =new MyActionListener(j9);//创建监听器
 j3.addActionListener(myActionListener);
 class MyActionListener implements ActionListener{//定义监听器类
@@ -105,7 +109,7 @@ class MyActionListener implements ActionListener{//定义监听器类
 	
 }
 MyActionListener myActionListener;
-# 基于文件保存并读取数据（以选、退课为例）
+## 基于文件保存并读取数据（以选、退课为例）
 
 1.声明文件流相关属性和字符缓存器
         File f1= new File("C:\\Users\\lenovo\\Desktop"+File.separator+"选课.txt"); //文件路径及名称
@@ -148,11 +152,11 @@ public void actionPerformed(ActionEvent arg0) {
 		System.out.println("传输错误！");
 		}
 }
-# 流程图
+## 流程图
 
 呀！没加载出来
 
-# 实验结果
+## 实验结果
 
 ## 选课操作
 
