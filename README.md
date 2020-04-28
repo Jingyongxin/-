@@ -15,10 +15,14 @@
 学校有“人员”，分为“教师”和“学生”，教师教授“课程”，学生选择“课程”。从简化系统考虑，每名教师仅教授一门课程，每门课程的授课教师也仅有一位，每名学生选仅选一门课程。
 ## 具体实验要求
 
-1.设计GUI窗体，支持学生注册、课程新加、学生选课、学生退课、打印学生选课列表等操作。
+1.设计GUI窗体，支持学生注册、课程新加、学生选课、学生退课、打印学生选课列表等操作。 
+
 2.基于事件模型对业务逻辑编程，实现在界面上支持上述操作。
+
 3.针对操作过程中可能会出现的各种异常，做异常处理。
+
 4.基于输入/输出编程，支持学生、课程、教师等数据的读写操作。
+
 5.基于Github.com提交实验，包括实验SRC源文件夹程序、README.MD实验报告文档。
  ## 实验过程
 
@@ -38,6 +42,7 @@ public class Teacher extends Personnel {
 		super(id, name, sex);
 	}
 }
+```
 3.设计Student类（学生类）
 继承Personnel类，获得编号、姓名、性别变量，调用Subject类，进行选课、退课操作，使用toString() 方法将“"学生编号："+id+",学生："+name+",所选课程："+subject;”转为字符串返回结果。
 ```java
@@ -59,8 +64,10 @@ public void putsubject(){
 	public Subject delete(){
 		return subject = null;
 	}
+```
 4.设计Subject类（课程类）
 声明编号、课程名称、上课地点、时间和学分变量，调用Teacher类，使用toString() 方法将“"课程编号："+id+",课程名："+name+",地点："+place+",时间："+time+",学分："+mark+",老师信息："+teacher;”转为字符串返回结果。
+
 # GUI窗体设计
 
 1.界面设计
@@ -78,6 +85,8 @@ public void putsubject(){
         j7 = new JButton("清除");
         j8 = new JList(str2);
         j9 = new TextField();
+	```
+	
 2.事件驱动
 定义j2（开课）按钮为事件源，j2注册监听器对象actionPerformed，actionPerformed实现ActionEvent event响应操作为j9输出开课信息， ActionEvent event中教师名获取j6文本框输入的文本，课程名获取j5下拉文本。
 ```java
@@ -93,6 +102,8 @@ public void actionPerformed(ActionEvent event) {//指定监听器实现方法
 	}
     
 }
+```
+
 定义j3（退课）按钮为事件源，j3注册监听器对象MyActionListener，定义MyActionListener实现ActionListener接口响应操作为j9输出关课文本。
 ```java
 myActionListener =new MyActionListener(j9);//创建监听器
@@ -121,7 +132,8 @@ MyActionListener myActionListener;
 	
 	String abc;
 	StringBuffer def ;//缓存器
-	```
+```
+
 2.选课流程
 将选课输出内容写入“选课.txt”文件，输入每名学生信息后换行，并设计异常。
 	```java
@@ -133,7 +145,7 @@ MyActionListener myActionListener;
 			} catch (IOException e) {
 				System.out.println("文件传输错误");
 			}
-			```
+	```
 3.退课流程
 读取文件每一行数据逐次放入缓存，缓存中的一行数据与姓名、课程对比，相同则该行数据不写入文件，不同则写入文件，直到缓存读取到文件数据为空停止，并设计异常。
 ```java
