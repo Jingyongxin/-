@@ -75,11 +75,11 @@ public void putsubject(){
 
 ```java
 d = new MyFrame();
-j2 = new JButton("开课");
-j3 = new JButton("关课");
+j2 = new JButton("选课");
+j3 = new JButton("退课");
 j4 = new JPanel();
 String[] str1 = { "大学语文", "高等数学", "大学英语" };
-String[] str2 = { "信息工程学院", "机械工程学院", "经济管理学院" };
+String[] str2 = { "信息工程学院", "化学工程学院", "机械工程学院" };
 j5 = new JComboBox(str1);
 j10 = new JLabel("姓名：");
 j6 = new JTextField();
@@ -116,7 +116,7 @@ class MyActionListener implements ActionListener{//定义监听器类
 		this.textField = textField;
 	}
 	public void actionPerformed(ActionEvent event) {
-			textField.setText("已成功关课！");//响应操作
+			textField.setText("您未选课！");//响应操作
 	}
 	
 }
